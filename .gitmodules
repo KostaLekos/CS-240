@@ -1,3 +1,6 @@
 [submodule "HelloWorld"]
 	path = HelloWorld
 	url = https://github.com/KostaLekos/HelloWorld
+[submodule "PolishNotationEvaluator"]
+	path = PolishNotationEvaluator
+	url = https://github.com/KostaLekos/PolishNotationEvaluator
