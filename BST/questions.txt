@@ -1,0 +1,7 @@
+1. The delete method was the most challenging to implement because i had to refactor the tree if the node had other nodes to the left or right of it.
+
+2. The structure of my tree is based on Task Priority, making the time complexity to search for it O(log(n)) when the tree is well balanced, so it is efficent to search for items.
+
+3. When using a binary search tree for a data type, you need something to sort it by through greater than or less than. For the Task object for example, you need to choose what to sort it by based on what you are prioritizing (in this case task priority over task description).
+
+4. Yes, simply because now I have more experience with them and can see that I have the ability to make them.

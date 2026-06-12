@@ -4,7 +4,6 @@
 // This class defines a generic Binary Search Tree (BST) data structure.
 // It uses a nested TreeNode class to represent each node in the tree.
 // The tree stores elements of any type E that implements Comparable<E>.
-package tree;
 
 public class BST<E extends Comparable<E>> {
     protected TreeNode<E> root; // The root node of the BST
@@ -94,17 +93,19 @@ public class BST<E extends Comparable<E>> {
         
         TreeNode<E> parent = null;
         TreeNode<E> current = root;
-        
-        while (current != null && !current.element.equals(value)) {
+
+        int cmp = value.compareTo(current.element);        
+        while (current != null && cmp != 0) {
             parent = current;
-            if (value.compareTo(current.element) < 0) current = current.left;
+            if (cmp < 0) current = current.left;
             else current = current.right;
+            cmp = value.compareTo(current.element);        
         }
         if (current == null) return false; // value not found
         
         // if node has two children
         if (current.left != null && current.right != null) {
-            // Find in-order successor (smallest in right subtree)
+            // find in-order successor (smallest in right subtree)
             TreeNode<E> succParent = current;
             TreeNode<E> succ = current.right;
             while (succ.left != null) {
@@ -112,10 +113,10 @@ public class BST<E extends Comparable<E>> {
                 succ = succ.left;
             }
             
-            // Copy successor's value to current node
+            // copy successor value to current node
             current.element = succ.element;
             
-            // Now remove successor
+            // remove successor
             parent = succParent;
             current = succ;
         }
@@ -124,7 +125,7 @@ public class BST<E extends Comparable<E>> {
         TreeNode<E> child = (current.left != null) ? current.left : current.right;
         
         if (parent == null) {
-            root = child; // removing root
+            root = child; // remove root
         } else if (parent.left == current) {
             parent.left = child;
         } else {
@@ -134,7 +135,51 @@ public class BST<E extends Comparable<E>> {
         return true;
     }
     
+    public void insert(E value) {
+        if (root == null) {
+            root = new TreeNode<>(value);
+            return;
+        }
 
+        TreeNode<E> current = root;
+
+        while (true) {
+            int cmp = value.compareTo(current.element);
+            if (cmp == 0) {
+                return;
+            } else if (cmp < 0) {
+                if (current.left != null) {
+                    current = current.left;
+                } else {
+                    current.left = new TreeNode<E>(value);
+                    return;
+                }
+            } else if (cmp > 0) {
+                if (current.right != null) {
+                    current = current.right;
+                } else {
+                    current.right = new TreeNode<E>(value);
+                    return;
+                }
+            }
+        }
+    }
+
+    public TreeNode<E> get(E value) {
+        TreeNode<E> current = root;
+
+        while (current != null) {
+            int cmp = value.compareTo(current.element);
+            if (cmp == 0) return current;
+            else if (cmp < 0) current = current.left;
+            else current = current.right;
+        }
+        return null; // not found
+    }
+
+    public TreeNode<E> getRoot() {
+        return root;
+    }
 
     // Nested TreeNode class to represent each node in the tree
     public static class TreeNode<E> {

@@ -1,3 +1,5 @@
+// Kosta Lekos
+// 06/12/2026
 public class AVLNode<E> {
     E element;
     AVLNode<E> left;

@@ -1,3 +1,5 @@
+// Kosta Lekos
+// 06/12/2026
 public class TestAVLTree {
     public static void main(String[] args) {
         AVLTree<String> stringSearchTree = new AVLTree<>();
@@ -31,14 +33,38 @@ public class TestAVLTree {
 
         System.out.println();
 
+        stringSearchTree.traceSearch("date");
+        stringSearchTree.traceSearch("dog");
+        stringSearchTree.traceSearch("raspberry");
+        stringSearchTree.traceSearch("yellow");
+
+        System.out.println();
+
+        stringSearchTree.printNodeBalances();
+
+        System.out.println();
+
+        System.out.println("Is AVL? " + stringSearchTree.isAVL());
+
+        System.out.println();
+        System.out.println();
+
         System.out.println("\nAVL Tree Structure (Integers):");
         integerSearchTree.printAsciiTree();
+
+        System.out.println();
 
         integerSearchTree.traceSearch(71);
         integerSearchTree.traceSearch(28);
         integerSearchTree.traceSearch(1);
         integerSearchTree.traceSearch(100);
 
+        System.out.println();
+
         integerSearchTree.printNodeBalances();
+
+        System.out.println();
+
+        System.out.println("Is AVL? " + integerSearchTree.isAVL());
     }
 }

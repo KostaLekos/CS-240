@@ -1,6 +1,9 @@
+// Kosta Lekos
+// June 9th, 2026
 // Task.java
 // This class models a Task with a priority and description.
 // It also assigns a unique creation order for tie-breaking.
+
 public class Task implements Comparable<Task> {
     private static long counter = 0; // Used to assign creation order
     private final int priority;      // Priority level of the task
@@ -38,7 +41,6 @@ public class Task implements Comparable<Task> {
     // TO IMPLEMENT: compareTo method for sorting by priority, and by creationOrder if extra credit
     public int compareTo(Task other) {
         int priority = Integer.compare(this.getPriority(), other.getPriority());
-        if (priority != 0) return priority;
-        return Long.compare(this.getCreationOrder(), other.getCreationOrder());
+        return priority;
     }
 }

@@ -1,3 +1,5 @@
+// Kosta Lekos
+// 06/12/2026
 public class AVLTree<E extends Comparable<E>> {
 
 
@@ -190,6 +192,5 @@ public class AVLTree<E extends Comparable<E>> {
 
         isAVL(node.right, isAVL);
     }
-
 }
 

@@ -1,0 +1,7 @@
+1. I had multiple recursive methods but the base case was if (node == null). It was necessary so that when searching the tree in-order, it would go back up and explore other branches once it hit the bottom.
+
+2. You need to go down multiple paths of the tree so having them be called recursively is a good way to achieve that.
+
+3. It is quite computational expensive since it both uses recursion to traverse the tree and again to calculate each of the balances. If I were to add more to this, I would combine the printNodeBlances and balanceFactor functions to make the balance calculations more efficent.
+
+4. Nope, not really.
