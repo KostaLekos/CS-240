@@ -154,5 +154,42 @@ public class AVLTree<E extends Comparable<E>> {
             return traceSearchHelper(key, node.left);
         }
     }
+
+    public void printNodeBalances() {
+        int[] n = {1};
+        printNodeBalances(root, n);
+        System.out.println("Tree height = " + height(root));
+    }
+
+    private void printNodeBalances(AVLNode<E> node, int[] n) {
+        if (node == null) return;
+        
+        printNodeBalances(node.left, n);
+
+        System.out.println("Node " + n[0] + ": balance = " + balanceFactor(node));
+        n[0]++;
+
+        printNodeBalances(node.right, n);
+    }
+
+    public boolean isAVL() {
+        boolean[] isAVL = {true};
+        isAVL(root, isAVL);
+        return isAVL[0];
+    }
+
+    private void isAVL(AVLNode<E> node, boolean[] isAVL) {
+        if (node == null) return;
+        
+        isAVL(node.left, isAVL);
+
+        int bal = balanceFactor(node);
+        if (bal > 1 || bal < -1) {
+            isAVL[0] = false;
+        }
+
+        isAVL(node.right, isAVL);
+    }
+
 }
 

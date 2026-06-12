@@ -14,13 +14,8 @@ public class TestAVLTree {
         };
 
         int[] dataset_integers = {
-            50, 25, 75, 12, 37,
-            62, 87, 6, 18, 31,
-            43, 56, 68, 81, 93,
-            3, 9, 15, 21, 28,
-            34, 40, 46, 53, 59,
-            65, 71, 78, 84, 90,
-            96, 99
+            1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+            11, 12, 13, 14, 15, 16, 17, 18, 19, 20
         };
 
         for (String word : dataset_strings) {
@@ -43,5 +38,7 @@ public class TestAVLTree {
         integerSearchTree.traceSearch(28);
         integerSearchTree.traceSearch(1);
         integerSearchTree.traceSearch(100);
+
+        integerSearchTree.printNodeBalances();
     }
 }
