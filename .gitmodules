@@ -7,3 +7,6 @@
 [submodule "TranslationDictionary"]
 	path = TranslationDictionary
 	url = git@github.com:KostaLekos/TranslationDictionary.git
+[submodule "HashMapTranslator"]
+	path = HashMapTranslator
+	url = git@github.com:KostaLekos/HashMapTranslator.git
