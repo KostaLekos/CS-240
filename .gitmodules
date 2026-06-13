@@ -4,3 +4,6 @@
 [submodule "PolishNotationEvaluator"]
 	path = PolishNotationEvaluator
 	url = https://github.com/KostaLekos/PolishNotationEvaluator
+[submodule "TranslationDictionary"]
+	path = TranslationDictionary
+	url = git@github.com:KostaLekos/TranslationDictionary.git
